@@ -8,10 +8,10 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-var taskInput=document.querySelectorAll(".text-input")[0];//Add a new task.
+var taskInput=document.querySelector(".add-item__input");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
 var incompleteTaskHolder=document.querySelector(".todo__list");//ul of incomplete-tasks
-var completedTasksHolder=document.getElementById("completed__list");//completed-tasks
+var completedTasksHolder=document.querySelector(".completed__list");//completed-tasks
 
 
 //New task list item
@@ -23,12 +23,12 @@ var createNewTaskElement=function(taskString){
 
     //input (checkbox)
     var checkBox=document.createElement("input");//checkbx
-    checkBox.classList.add("checkbox-input");
+    checkBox.classList.add("item__checkbox");
     //label
     var label=document.createElement("label");//label
     //input (text)
     var editInput=document.createElement("input");//text
-    editInput.classList.add("text-input");
+    editInput.classList.add("item__input");
     //button.edit
     var editButton=document.createElement("button");//edit button
     //button.delete
@@ -38,7 +38,7 @@ var createNewTaskElement=function(taskString){
     deleteButtonImg.alt = "delete item button";//add alt text to button image
 
     label.innerText=taskString;
-    label.classList.add("label");
+    label.classList.add("item__label");
 
     //Each elements, needs appending
     checkBox.type="checkbox";
@@ -89,7 +89,7 @@ var editTask=function(){
     var listItem=this.parentNode;
 
     var editInput=listItem.querySelector('input[type=text]');
-    var label=listItem.querySelector(".label");
+    var label=listItem.querySelector(".item__label");
     var editBtn=listItem.querySelector(".button_edit");
     var containsClass=listItem.classList.contains("item_edit");
     //If class of the parent is .editmode
