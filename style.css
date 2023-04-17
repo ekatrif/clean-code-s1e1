@@ -13,7 +13,7 @@
 .header__img {
   width: 100%;
 }
-.header .header__link {
+.header__link {
   font-family: fantasy, cursive;
 }
 
@@ -76,8 +76,7 @@ button{
   text-transform: uppercase;
 }
 .text-input {
-  display: inline-block;
-  flex-grow: 1;
+  display: none;/*Visible only for add-task input & while edition*/
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -88,23 +87,14 @@ button{
   border-radius: 6px;
   font-family: Lato, sans-serif;
   color: #888;
+  width: 226px;
 }
 .text-input:focus {
   color: #333;
 }
 
 /* New Task */
-.add-item__input {
-  margin: 0;
-  font-size: 18px;
-  line-height: 18px;
-  height: 21px;
-  padding: 0 9px;
-  border: 1px solid #ddd;
-  background: #fff;
-  border-radius: 6px;
-  font-family: Lato, sans-serif;
-  color: #888;  
+.add-item .text-input {
   width: 318px;
   display: inline-block;
   flex-grow: 1;
@@ -124,18 +114,15 @@ button{
   vertical-align: middle;
 }
 
-.item > .checkbox-input {
+.checkbox-input {
   margin: 0 10px;
 }
-.item > .label {
+.label {
   display: inline-block;
   flex-grow: 1;
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
-  width: 226px;
-}
-.item > .text-input {
   width: 226px;
 }
 .button__img_delete {
@@ -148,18 +135,15 @@ button{
 }
 
 /* Completed */
-#completed__list .label {
+.completed__list .label {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-.text-input {
-  display: none;
-}
-
 .item_edit .text-input {
   display: inline-block;
+  flex-grow: 1;
   width: 224px;
 }
 
